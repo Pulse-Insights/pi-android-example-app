@@ -1,0 +1,44 @@
+{
+  "viewMappings": [
+    {
+      "className": "MainActivity",
+      "analyticsName": "account",
+      "surveyConfig": {
+        "enabled": true,
+        "frequency": 0
+      }
+    },
+    {
+      "className": "secondActivity",
+      "analyticsName": "SecondActivity",
+      "surveyConfig": {
+        "enabled": true,
+        "frequency": 0
+      }
+    },
+    {
+      "className": "HomeFragment",
+      "analyticsName": "Main.Home",
+      "surveyConfig": {
+        "enabled": true,
+        "frequency": 0
+      }
+    },
+    {
+      "className": "DashboardFragment",
+      "analyticsName": "Main.Dashboard",
+      "surveyConfig": {
+        "enabled": true,
+        "frequency": 0
+      }
+    },
+    {
+      "className": "NotificationsFragment",
+      "analyticsName": "Main.Notifications",
+      "surveyConfig": {
+        "enabled": true,
+        "frequency": 0
+      }
+    }
+  ]
+}
