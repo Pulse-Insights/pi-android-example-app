@@ -35,17 +35,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-//        val app = application as MyApp
-//        val pi = app.getPulseInsights()
-//        pi.setDebugMode(true)
-//        pi.setContext(this)
-
-//        pi.setScanFrequency(1)
-//        pi.setViewName("account")
-//        pi.serve()
-//        print(pi)
-//        pi.present("7465")
-
         PulseInsightsManager.setContext(this)
 
     }
