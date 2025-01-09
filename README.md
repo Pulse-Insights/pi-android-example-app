@@ -45,14 +45,13 @@ This sample Android application demonstrates the integration of the **Pulse Insi
    In this sample application, the maven repository is resolved in settings.gradle.kts
 2.  declare dependency in build.gradle.kts
 
-    ```kotlin
-dependencies {
-
-implementation("com.pulseinsights:android-sdk:2.4.2")
-implementation("com.google.code.gson:gson:2.11.0")  // implement gson
-
-}
-```
+```kotlin
+    dependencies {
+    
+    implementation("com.pulseinsights:android-sdk:2.4.2")
+    implementation("com.google.code.gson:gson:2.11.0")  // implement gson
+    
+    }
 ```
 
 3. Add the following elements to AndroidManifest.xml Permissions for sensors
