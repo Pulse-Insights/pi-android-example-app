@@ -20,7 +20,7 @@ This sample Android application demonstrates the integration of the **Pulse Insi
 
 - **Android Studio** version [X.X] or later.
 - Minimum Android SDK level [XX].
-- An API key for **Pulse Insights SDK**.
+- An Account key for **Pulse Insights SDK**.
 
 ---
 
@@ -40,32 +40,32 @@ This sample Android application demonstrates the integration of the **Pulse Insi
         }
     }
    ```
-    Alternatively the dependency may be defined in the application or project build.gradle
+   Alternatively the dependency may be defined in the application or project build.gradle
 
-    In this sample application, the maven repository is resolved in settings.gradle.kts
+   In this sample application, the maven repository is resolved in settings.gradle.kts
 2.  declare dependency in build.gradle.kts
-    
+
     ```kotlin
-   dependencies {
-    
-    implementation("com.pulseinsights:android-sdk:2.4.2")
-    implementation("com.google.code.gson:gson:2.11.0")  // implement gson
-    
-    }
-   ```
-   
-3. Add the following elements to AndroidManifest.xml
-    Permissions for sensors
+dependencies {
+
+implementation("com.pulseinsights:android-sdk:2.4.2")
+implementation("com.google.code.gson:gson:2.11.0")  // implement gson
+
+}
+```
+```
+
+3. Add the following elements to AndroidManifest.xml Permissions for sensors
     ```xml
-   <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
-   ```
+        <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+    ```
    If targeting Android api version 28 and above the following is required to load our httpcore
     ```xml
     <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" /> 
    ```
-    
+
 ---
 
 ### 3. Add Your Account Identifier
@@ -73,7 +73,7 @@ This sample Android application demonstrates the integration of the **Pulse Insi
 Replace `account_id` with your Pulse Insights Account ID in the `MyApp.kt` file:
 
 ```kotlin
-//example custom data object and config on init
+    //example custom data object and config on init
 val config = ExtraConfig().apply {
     automaticStart = false
     customData = mapOf(
@@ -93,18 +93,18 @@ Add your custom view mappings in `res/raw/view_mappings.json`:
 
 ```json
 {
-    "viewMappings": [
-        {
-            "className": "MainActivity",
-            "analyticsName": "Main",
-            "surveyConfig": { "enabled": true, "frequency": 1 }
-        },
-        {
-            "className": "DashboardFragment",
-            "analyticsName": "Main.Dashboard",
-            "surveyConfig": { "enabled": true, "frequency": 0 }
-        }
-    ]
+  "viewMappings": [
+    {
+      "className": "MainActivity",
+      "analyticsName": "Main",
+      "surveyConfig": { "enabled": true, "frequency": 1 }
+    },
+    {
+      "className": "DashboardFragment",
+      "analyticsName": "Main.Dashboard",
+      "surveyConfig": { "enabled": true, "frequency": 0 }
+    }
+  ]
 }
 ```
 
@@ -121,7 +121,7 @@ Add your custom view mappings in `res/raw/view_mappings.json`:
 ## Project Structure
 
 ### 1. `MyApp.kt`
-- Initializes the **Pulse Insights SDK** with an API key and custom configurations.
+- Initializes the **Pulse Insights SDK** with an Account key and custom configurations.
 - Registers lifecycle callbacks for activity and fragment tracking.
 - Loads view mappings during application startup.
 
@@ -136,25 +136,12 @@ Add your custom view mappings in `res/raw/view_mappings.json`:
 
 ### 4. `PulseInsightsManager.kt`
 - Encapsulates SDK initialization and interaction logic.
-- The PulseInsights SDK API is directly accessible from the PulseInsights Instance, The manager provides a potential implementation for more concise management of survey concepts 
+- The PulseInsights SDK API is directly accessible from the PulseInsights Instance, The manager provides a potential implementation for more concise management of survey concepts
 - Provides methods to set context and trigger surveys programmatically.
 
 ### 5. `ViewConfig.kt`
 - Defines the structure for view configurations, including:
-  - `analyticsName`: Analytics identifier for the view.
-  - `shouldTriggerSurvey`: Whether the survey should trigger for this view.
-  - `surveyFrequency`: Frequency of survey triggers.
+    - `analyticsName`: Analytics identifier for the view.
+    - `shouldTriggerSurvey`: Whether the survey should trigger for this view.
+    - `surveyFrequency`: Frequency of survey triggers.
 
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Support
-
-For more details, refer to the [Pulse Insights SDK Documentation](https://example-sdk-docs-url.com) or contact [support@yourcompany.com](mailto:support@yourcompany.com).
-
----
